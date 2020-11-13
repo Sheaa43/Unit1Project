@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Andrew's Pizza Palace</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="page">
+<div id="containerHeader">
+<h1>Andrew's Pizza Palace</h1>
+</div>
+
+<div class="container">
+    <nav>
+        <ul id="tabs" class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" href="#PizzaDetails">Pizza Details</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#DeliveryInformation">Delivery Information</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#confirmation">Order Confirmation</a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <!--Tab 1 Pizza Details-->
+    <div class="tab-content">
+        <div id="PizzaDetails" class="tab-pane active">
+            <h2 id="pizzaDetailsHeader">Pizza Details</h2>
+            <hr>
+            <!--Size Selection-->
+
+            <h3>Choose Your Size</h3>
+            <form id="pizzaSize">
+                <input type="radio" name="size" id="size-small" value="small" data-cost="7">
+                <label for="size-small">Small $7.00</label>
+                <br>
+                <input type="radio" name="size" id="size-medium" value="medium" data-cost="9">
+                <label for="size-medium">Medium $9.00</label>
+                <br>
+                <input type="radio" name="size" id="size-large" value="large" data-cost="12" checked="checked">
+                <label for="size-large">Large $12</label>
+                <br>
+            </form>
+            <hr>
+
+            <!--Crust Selection-->
+            <div id="crust">
+                <h3>Choose Your Crust</h3>
+                <form id="crustType">
+                    <input type="radio" name="crust" id="crust-thin" value="thin">
+                    <label for="crust-thin">Thin Crust</label>
+                    <br>
+                    <input type="radio" name="crust" id="crust-pan" value="pan" checked="checked">
+                    <label for="crust-pan">Pan Crust</label>
+                    <br>
+                    <input type="radio" name="crust" id="crust-gf" value="gf">
+                    <label for="crust-gf">Gluten-Free Crust</label>
+                    <br>
+                </form>
+                <hr>
+            </div>
+
+            <!--Meat Selection-->
+            <div id="meats">
+                <h3>Choose Your Meats ($1.50 each)</h3>
+                <form id="meatSelection">
+                    <input type="checkbox" name="meat" id="meat-pepperoni" value="Pepperoni" data-price="1.5">
+                    <label for="meat-pepperoni">Pepperoni</label>
+                    <br>
+                    <input type="checkbox" name="meat" id="meat-sausage" value="Sausage" data-price="1.5">
+                    <label for="meat-sausage">Sausage</label>
+                    <br>
+                    <input type="checkbox" name="meat" id="meat-ham" value="Ham" data-price="1.5">
+                    <label for="meat-ham">Ham</label>
+                    <br>
+                </form>
+            </div>
+
+            <!--Veggie Selection-->
+            <div id="veggies">
+                <h3>Choose Your Veggies ($1.00 each)</h3>
+                <form id="veggieSelection">
+                    <input type="checkbox" name="veg" id="veg-olives" value="Black Olives" data-price="1">
+                    <label for="veg-olives">Black Olives</label>
+                    <br>
+                    <input type="checkbox" name="veg" id="veg-peppers" value="Peppers" data-price="1">
+                    <label for="veg-peppers">Peppers</label>
+                    <br>
+                    <input type="checkbox" name="veg" id="veg-onions" value="Onions" data-price="1">
+                    <label for="veg-onions">Onions</label>
+                    <br>
+                </form>
+                <p>*Proceed to the "Delivery Information" tab once you are completed with this page.</p>
+            </div>
+        </div>
+        <hr>
+
+
+        <!--Tab2 Delivery Info-->
+        <div id="DeliveryInformation" class="tab-pane">
+            <h2>Delivery Details</h2>
+            <form id="deliveryDetails">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName">
+                <br>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" size="25">
+                <br>
+                <label for="streetAddress">Street Address:</label>
+                <input type="text" id="streetAddress" size="40">
+                <br>
+                <label for="city">City:</label>
+                <input type="text" id="city" size="30">
+                <br>
+                <label for="state">State:</label>
+                <input type="text" id="state">
+                <br>
+                <label for="zipCode">Zip Code:</label>
+                <input type="number" id="zipCode">
+                <br>
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="number" id="phoneNumber">
+                <br>
+                <button id="orderNow">Place Order</button>
+            </form>
+        </div>
+        <hr>
+
+        <!--Tab3 Order Confirmation-->
+        <div id="confirmation" class="tab-pane">
+            <h2>Order Confirmation</h2>
+
+            <table>
+                <tr>
+                    <td>First Name:</td>
+                    <td id="firstNameConfirmation"></td>
+                </tr>
+                <tr>
+                    <td>Last Name:</td>
+                    <td id="lastNameConfirmation"></td>
+                </tr>
+                <tr>
+                    <td>Street Address:</td>
+                    <td id="deliveryAddressConfirmation"></td>
+                </tr>
+                <tr>
+                    <td>City:</td>
+                    <td id="cityConfirmation"></td>
+                </tr>
+                <tr>
+                    <td>State:</td>
+                    <td id="stateConfirmation"></td>
+                </tr>
+                <tr>
+                    <td>Zip Code:</td>
+                    <td id="zipConfirmation"></td>
+                </tr>
+                <tr>
+                    <td>Phone Number:</td>
+                    <td id="phoneNumberConfirmation"></td>
+                </tr>
+                <tr>
+                    <td>Subtotal:</td>
+                    <td id="subtotal"></td>
+                </tr>
+                <tr>
+                    <td>Calculated Tax:</td>
+                    <td id="calculatedTax"></td>
+                </tr>
+                <tr>
+                    <td>Delivery Fee:</td>
+                    <td id="deliveryFee"></td>
+                </tr>
+                <tr>
+                    <td>Total Cost:</td>
+                    <td id="totalCost"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!--script-->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="code.js"></script>
+
+</body>
+</html>
